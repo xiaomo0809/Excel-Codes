@@ -1,0 +1,36 @@
+Sub striptheaccent()
+    Dim rng As Range, cell As Range
+    Set rng = Range("A1:F200")
+    For Each cell In rng
+        cell.Value = stripAccent(cell.Value)
+    Next cell
+
+End Sub
+
+
+Function stripAccent(Text As String) As String
+
+    Const AccChars = "Ã"
+    Const RegChars = "a"
+    Const AccChars2 = "º©¤®Â"
+    Const RegChars2 = ""
+
+    Dim A As String * 1
+    Dim B As String * 1
+    Dim i As Integer
+
+    For i = 1 To Len(AccChars)
+        A = Mid(AccChars, i, 1)
+        B = Mid(RegChars, i, 1)
+        Text = Replace(Text, A, B)
+        
+    Next
+    
+    For i = 1 To Len(AccChars2)
+        C = Mid(AccChars2, i, 1)
+        Text = Replace(Text, C, RegChars2)
+    Next
+
+    stripAccent = Text
+
+End Function
