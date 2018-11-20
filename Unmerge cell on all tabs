@@ -1,0 +1,10 @@
+Sub UnMergecell()
+    Dim wsh As Worksheet
+    For Each wsh In ActiveWorkbook.Worksheets
+        wsh.Activate
+        wsh.Range("A52:B61").UnMerge
+        wsh.Range("C52:D61").UnMerge
+        wsh.Range("A65:B84").UnMerge
+        wsh.[a1].Select
+    Next
+End Sub
