@@ -1,0 +1,11 @@
+Sub Pasteval()
+    Dim wsh As Worksheet
+    For Each wsh In ActiveWorkbook.Worksheets
+        wsh.Activate
+        wsh.Cells.Copy
+        wsh.Cells.PasteSpecial xlPasteValues
+        wsh.[a1].Select
+    Next
+    Sheets(1).Activate
+    Application.CutCopyMode = False
+End Sub
