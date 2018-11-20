@@ -1,0 +1,7 @@
+Sub Mergecellsingletab()
+    Set shtJT = ActiveWorkbook.ActiveSheet
+    shtJT.Range("A52:B61").Merge Across:=True
+    shtJT.Range("C52:D61").Merge Across:=True
+    shtJT.Range("A65:B84").Merge Across:=True
+    shtJT.[a1].Select
+End Sub
